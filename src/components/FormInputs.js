@@ -15,7 +15,8 @@ function FormInputs(props) {
             <input {...inputProps}
                 onChange={onChange}
                 onBlur={handleFocus}
-                onFocus={() => inputProps.name === "confirmPassword" && setFocused(true)}
+                // react-dom.production.min.js:216 TypeError: (0 , s.useState) is not a function
+                onFocus={() => inputProps.name === "confirmPassword" && handleFocus.setFocused(true)}
                 focused={focused.toString()} />
             <span>{errorMessage}</span>
         </div>
