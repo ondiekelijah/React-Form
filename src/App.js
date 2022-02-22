@@ -17,35 +17,47 @@ function App() {
       name: "username",
       type: "text",
       placeholder: "Username",
-      label: "Username"
+      errorMessage:"Is your username between 3-16 characters? We don't allow special characters too",
+      pattern:"^[A-Za-z0-9]{3,16}$",
+      label: "Username",
+      required: true
     },
     {
       id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
-      label: "Email"
+      errorMessage:"Please provide a valid email",
+      label: "Email",
+      required: true
     },
     {
       id: 3,
       name: "birthday",
-      type: "text",
-      placeholder: "Birthday",
-      label: "Birthday"
+      type: "date",
+      errorMessage:"",
+      label: "Birthday",
+      required: true
     },
     {
       id: 4,
       name: "password",
-      type: "password",
+      type: "text",
       placeholder: "Password",
-      label: "Password"
+      errorMessage:"Password must be a minumum of 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+      pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$",
+      label: "Password",
+      required: true
     },
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: "text",
       placeholder: "Confirm Password",
-      label: "Confirm Password"
+      errorMessage:"Passwords don't match!",
+      pattern: values.password,
+      label: "Confirm Password",
+      required: true
     }
 
   ]
@@ -62,6 +74,7 @@ function App() {
   return (
     <div className="app">
       <form onSubmit={handleSubmit}>
+      <h1>Sign Up</h1>
         {inputs.map((input) => (
           <FormInputs key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
         ))}
