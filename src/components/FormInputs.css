@@ -26,11 +26,17 @@ span {
   display: none;
 }
 input:valid[focused="true"] {
-    border: 1.5px solid green;
-  }
+  border: 1.5px solid green;
+}
 input:invalid[focused="true"] {
   border: 1px solid red;
 }
 input:invalid[focused="true"] ~ span {
   display: block;
+}
+
+@media (max-width: 992px) {
+  .form-input {
+    width: 100%;
+  }
 }
