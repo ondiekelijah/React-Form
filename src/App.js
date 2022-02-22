@@ -42,7 +42,7 @@ function App() {
     {
       id: 4,
       name: "password",
-      type: "text",
+      type: "password",
       placeholder: "Password",
       errorMessage:"Password must be a minumum of 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character",
       pattern: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$",
@@ -52,7 +52,7 @@ function App() {
     {
       id: 5,
       name: "confirmPassword",
-      type: "text",
+      type: "password",
       placeholder: "Confirm Password",
       errorMessage:"Passwords don't match!",
       pattern: values.password,
