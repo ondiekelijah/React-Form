@@ -22,12 +22,13 @@ function App() {
       label: "Username",
       required: true
     },
-    {
+    {    
       id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
       errorMessage:"Please provide a valid email",
+      pattern:"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*$/",
       label: "Email",
       required: true
     },
