@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useState } from 'react';
 import './App.css';
 import FormInputs from './components/FormInputs';
@@ -28,7 +29,7 @@ function App() {
       type: "email",
       placeholder: "Email",
       errorMessage:"Please provide a valid email",
-      pattern:"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*$/",
+      pattern:"/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/",
       label: "Email",
       required: true
     },
